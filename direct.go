@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	"github.com/rcrowley/go-metrics"
+	"log"
 )
 
 const (
@@ -50,6 +51,9 @@ func writeRegistryAndFlushToDirect(c *WavefrontConfig) error {
 		if err != nil {
 			retErr = err
 		}
+	}
+	for _,v := range points{
+		log.Println(v)
 	}
 	return retErr
 }
